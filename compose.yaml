@@ -1,0 +1,12 @@
+services:
+  dev:
+    build:
+      context: .
+    container_name: go_dev
+    volumes:
+      - .:/app # Sincroniza o diretório atual com o container
+      # - /app/vendor # Ignora a pasta de dependências locais
+    ports:
+      - "8080:8080" # Porta para rodar a aplicação (opcional)
+    stdin_open: true # Mantém o terminal aberto
+    tty: true        # Permite acessar o terminal interativo
